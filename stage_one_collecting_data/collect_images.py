@@ -39,13 +39,16 @@ def main():
 
     cur_brick_name = ''
     cur_brick_id = ''
+    cur_brick_additional_info = ""
 
     def set_cur_brick(_):
         nonlocal cur_brick_name
         nonlocal cur_brick_id
+        nonlocal cur_brick_additional_info
 
         cur_brick_id = str(input('enter current brick id: '))
         cur_brick_name = str(input('enter current brick name: '))
+        cur_brick_additional_info = str(input('enter current brick additional info: '))
         return True
 
     def capture_frame(img):
@@ -55,7 +58,14 @@ def main():
         img_path = os.path.join(PATH_CAPTURES, f'{cur_capture_id}_{cur_brick_id}_{cur_brick_name}.png')
         cv2.imwrite(img_path, img)
 
-        data['captures'].append([cur_brick_id, cur_brick_name, img_path ])
+        data['captures'].append(
+            {
+                "id": cur_brick_id,
+                "name": cur_brick_name,
+                "image_path": img_path,
+                "additional_info": cur_brick_additional_info
+            }
+        )
         return True
 
     video_capture_loop = VideoCaptureLoop()
@@ -69,7 +79,7 @@ def main():
         file.write(str(cur_capture_id))
 
     with open(DATASET_JSON, 'w') as file:
-        json.dump(data, file)
+        json.dump(data, file, indent=4)
 
     pass
 
