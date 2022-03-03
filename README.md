@@ -30,4 +30,4 @@
 - Не имеют общих границ
 
 ## Датасет
-[Примеры](https://github.com/MekhailS/intelligent-placer/tree/master/examples)
+[Примеры](https://github.com/MekhailS/intelligent-placer/tree/dev/examples)
