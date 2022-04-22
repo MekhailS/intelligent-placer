@@ -30,7 +30,7 @@
 - Не имеют общих границ (т.е. предметы не могут лежать "впритык" к друг другу)
 
 ## Датасет
-[Примеры](https://github.com/MekhailS/intelligent-placer/tree/dev/examples)
+[Google Drive](https://drive.google.com/drive/folders/1J718e1IzpjxpUM044oUq_lSFF9xVW2Qk?usp=sharing)
 
 
 ## Результаты

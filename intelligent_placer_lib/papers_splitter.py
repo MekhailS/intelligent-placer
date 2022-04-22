@@ -15,7 +15,7 @@ class PapersSplitter:
         self.paper_image_right = None
         self.paper_mask_right = None
 
-        self.crops = None
+        self.object_crops = None
         self.area_to_fit = None
 
     def launch_processing(self):
@@ -29,7 +29,7 @@ class PapersSplitter:
             self.paper_image_right,
             PapersSplitter._get_right_paper_mask_processors(self.paper_mask_right)
         )
-        self.crops = PapersSplitter._get_crops_with_objects(
+        self.object_crops = PapersSplitter._get_crops_with_objects(
             self.paper_image_right,
             get_outer_contours_by_mask(objects_mask)
         )
